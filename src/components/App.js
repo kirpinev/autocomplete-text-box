@@ -11,7 +11,7 @@ const AppContainer = styled.div`
 
 const Wrapper = styled.div`
   margin: 150px auto 0 auto;
-  width: 600px;
+  max-width: 600px;
 `;
 
 const App = () => (
