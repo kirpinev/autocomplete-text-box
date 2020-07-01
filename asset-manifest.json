@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/kirpinev/autocomplete-text-box/static/js/main.c6ff2c09.chunk.js",
+    "main.js.map": "/kirpinev/autocomplete-text-box/static/js/main.c6ff2c09.chunk.js.map",
+    "runtime-main.js": "/kirpinev/autocomplete-text-box/static/js/runtime-main.1474b968.js",
+    "runtime-main.js.map": "/kirpinev/autocomplete-text-box/static/js/runtime-main.1474b968.js.map",
+    "static/js/2.267f773b.chunk.js": "/kirpinev/autocomplete-text-box/static/js/2.267f773b.chunk.js",
+    "static/js/2.267f773b.chunk.js.map": "/kirpinev/autocomplete-text-box/static/js/2.267f773b.chunk.js.map",
+    "index.html": "/kirpinev/autocomplete-text-box/index.html",
+    "precache-manifest.bf7c1e15ac55e7021139ca3736745db9.js": "/kirpinev/autocomplete-text-box/precache-manifest.bf7c1e15ac55e7021139ca3736745db9.js",
+    "service-worker.js": "/kirpinev/autocomplete-text-box/service-worker.js",
+    "static/js/2.267f773b.chunk.js.LICENSE.txt": "/kirpinev/autocomplete-text-box/static/js/2.267f773b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1474b968.js",
+    "static/js/2.267f773b.chunk.js",
+    "static/js/main.c6ff2c09.chunk.js"
+  ]
+}
