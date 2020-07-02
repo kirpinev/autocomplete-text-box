@@ -1,7 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Live demo: https://kirpinev.github.io/autocomplete-text-box/
-
 ## Available Scripts
 
 In the project directory, you can run:
