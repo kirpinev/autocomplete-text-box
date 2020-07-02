@@ -3,8 +3,6 @@ import styled from "styled-components";
 
 import AutoCompleteText from "./AutoCompleteText";
 
-import countries from "../data/countries";
-
 const AppContainer = styled.div`
   text-align: center;
 `;
@@ -18,7 +16,7 @@ const App = () => (
   <AppContainer>
     <Wrapper>
       <Wrapper>
-        <AutoCompleteText items={countries} />
+        <AutoCompleteText />
       </Wrapper>
     </Wrapper>
   </AppContainer>

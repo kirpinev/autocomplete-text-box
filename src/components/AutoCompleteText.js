@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
+import { selectCountry, selectSuggestions } from "../actions";
 
 import Input from "../uikit/Input";
 import List from "../uikit/UnorderedList";
@@ -32,35 +34,39 @@ const Item = styled(ListItem)`
   }
 `;
 
-const AutoCompleteText = ({ items }) => {
-  const [suggestions, setSuggestions] = useState([]);
-
-  const [inputValue, setInputValue] = useState("");
-
+const AutoCompleteText = ({
+  countries,
+  selectedCountry,
+  selectedSuggestions,
+  selectCountry,
+  selectSuggestions,
+}) => {
   const onInputChange = (e) => {
     const value = e.target.value;
 
-    setInputValue(e.target.value);
+    selectCountry(value);
 
-    setSuggestions([]);
+    selectSuggestions([]);
 
     if (value.length > 0) {
       const regex = new RegExp(`^${value}`, "i");
 
-      setSuggestions(items.sort().filter((item) => regex.test(item)));
+      selectSuggestions(
+        countries.sort().filter((country) => regex.test(country))
+      );
     }
   };
 
   const suggestionSelected = (value) => {
-    setInputValue(value);
+    selectCountry(value);
 
-    setSuggestions([]);
+    selectSuggestions([]);
   };
 
   const renderSuggestions = () =>
-    suggestions.length === 0 ? null : (
+    selectedSuggestions.length === 0 ? null : (
       <UnorderedList>
-        {suggestions.map((suggestion) => (
+        {selectedSuggestions.map((suggestion) => (
           <Item
             onClick={() => suggestionSelected(suggestion)}
             key={new Date() * Math.random()}
@@ -72,11 +78,19 @@ const AutoCompleteText = ({ items }) => {
     );
 
   return (
-    <Container className="AutoCompleteText">
-      <Input value={inputValue} type="text" onChange={onInputChange} />
+    <Container>
+      <Input value={selectedCountry} type="text" onChange={onInputChange} />
       {renderSuggestions()}
     </Container>
   );
 };
 
-export default AutoCompleteText;
+const mapStateToProps = (state) => ({
+  countries: state.countries,
+  selectedCountry: state.selectedCountry,
+  selectedSuggestions: state.selectedSuggestions,
+});
+
+export default connect(mapStateToProps, { selectCountry, selectSuggestions })(
+  AutoCompleteText
+);
